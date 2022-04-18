@@ -9,7 +9,7 @@
 CourseUp is a website built to simplify the experience of searching courses and building timetables for the [University of Victoria](https://uvic.ca) (UVic). The website is a TypeScript app which uses React on the front-end and Firebase on the back-end.
 
 ## Develop
-
+test
 If you're interested developing this application, follow these steps to get running a local version of the application.
 
 **Note**: These instructions are for developing the frontend (React). If you wish to develop the backend, please refer to the [README](./functions/README.md) located in `functions` directory in this repository.
