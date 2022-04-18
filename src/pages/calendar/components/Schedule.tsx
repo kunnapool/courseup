@@ -8,9 +8,11 @@ export interface ScheduleProps {
    * and also days and instructor info.
    */
   meetingTimes: MeetingTimes[];
+
 }
 
 export function Schedule({ meetingTimes }: ScheduleProps): JSX.Element {
+  var rate = 10;
   return (
     <Table variant="striped" size="sm">
       <Thead>
@@ -37,7 +39,7 @@ export function Schedule({ meetingTimes }: ScheduleProps): JSX.Element {
             {/* <Td>{m.scheduleType}</Td> */}
             <Td>{m.where}</Td>
             <Td>{m.instructors.join(', ')}</Td>
-            <Td>{m.rating = "3.1"}</Td>
+            <Td>{m.rating = rate.toString()}</Td>
           </Tr>
         ))}
       </Tbody>
