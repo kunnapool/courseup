@@ -107,6 +107,7 @@ export interface MeetingTimes {
   buildingAccronym?: string;
   building?: string;
   instructors: string[];
+  //rating: string;
   scheduleType: string;
   dateRange: string;
   where: string;
