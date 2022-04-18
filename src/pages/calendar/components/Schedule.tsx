@@ -22,6 +22,7 @@ export function Schedule({ meetingTimes }: ScheduleProps): JSX.Element {
           {/* <Th>Schedule Type</Th> */}
           <Th>Location</Th>
           <Th>Instructors</Th>
+          <Th>rating</Th>
         </Tr>
       </Thead>
       <Tbody>
@@ -36,6 +37,7 @@ export function Schedule({ meetingTimes }: ScheduleProps): JSX.Element {
             {/* <Td>{m.scheduleType}</Td> */}
             <Td>{m.where}</Td>
             <Td>{m.instructors.join(', ')}</Td>
+            <Td>{m.rating = "3.1"}</Td>
           </Tr>
         ))}
       </Tbody>

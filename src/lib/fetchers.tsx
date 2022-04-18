@@ -113,6 +113,7 @@ export interface MeetingTimes {
   days: string;
   time: string;
   type: string;
+  rating: string;
 }
 
 export type Section = OmitClassScheduleListingMeetingTimes & {
