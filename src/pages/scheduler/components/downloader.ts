@@ -4,7 +4,7 @@ export default async function getRMPRating(firstName: string, lastName: string) 
   const curlStr = `https://www.ratemyprofessors.com/search/teachers?query=${firstName}%20${lastName}&sid=U2Nob29sLTE0ODg=`;
   const ratingRegex = /\d\.\d/g;
 
-  const res = await fetch(curlStr, { 'Access-Control-Allow-Origin': '*' });
+  const res = await fetch(curlStr, { headers: { 'Access-Control-Allow-Origin': '*' } });
 
   if (!res.ok) {
     throw new Error('Fetch fucked up!');

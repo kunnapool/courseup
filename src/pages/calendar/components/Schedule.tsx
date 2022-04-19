@@ -1,6 +1,7 @@
 import { Badge, Table, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 
 import { MeetingTimes } from 'lib/fetchers';
+import getRMPRating from '../../scheduler/components/downloader';
 
 export interface ScheduleProps {
   /**
@@ -8,6 +9,17 @@ export interface ScheduleProps {
    * and also days and instructor info.
    */
   meetingTimes: MeetingTimes[];
+}
+
+export const rating: string[] = [];
+
+export async function setRatings({ meetingTimes }: ScheduleProps): Promise<string[]> {
+  let i = 0;
+  for (const m of meetingTimes) {
+    const rmp = await getRMPRating(m.instructors[0].split(' ')[0], m.instructors[0].split(' ')[1]);
+    rating[i++] = rmp;
+  }
+  return rating;
 }
 
 export function Schedule({ meetingTimes }: ScheduleProps): JSX.Element {
@@ -37,7 +49,7 @@ export function Schedule({ meetingTimes }: ScheduleProps): JSX.Element {
             {/* <Td>{m.scheduleType}</Td> */}
             <Td>{m.where}</Td>
             <Td>{m.instructors.join(', ')}</Td>
-            
+            <Td>{rating[i]}</Td>
           </Tr>
         ))}
       </Tbody>
